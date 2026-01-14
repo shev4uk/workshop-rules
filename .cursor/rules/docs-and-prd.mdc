@@ -1,0 +1,18 @@
+---
+description: "Documentation conventions for this repo (including PRD under `docs/`)."
+globs:
+  - "docs/**/*.md"
+alwaysApply: false
+---
+
+## Documentation principles
+
+- Prefer short sections with clear headings.
+- Keep language consistent within a doc (Ukrainian or English).
+- Link to canonical sources (repo files, official docs) instead of copying large text.
+
+## PRD (`docs/PRD.md`)
+
+- Treat `docs/PRD.md` as the canonical product definition.
+- When updating scope or milestones, keep acceptance criteria and risks in sync.
+

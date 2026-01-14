@@ -1,0 +1,36 @@
+---
+description: "Always-on baseline for working in this repo (safety, verification, repo hygiene)."
+alwaysApply: true
+---
+
+## Operating principles
+
+- Work **incrementally**: prefer small, reviewable changes over big rewrites.
+- **Don’t guess**: if uncertain, inspect the repo (search + read relevant files) and state assumptions.
+- **Cite sources**: when explaining behavior, point to the exact file(s) and relevant section(s).
+- Keep responses **concise** and actionable. Use **English or Ukrainian**.
+
+## Repo hygiene
+
+- **Never edit generated/vendor content**:
+  - Do not modify `slidev/node_modules/` (or any `node_modules/`).
+  - Do not commit build outputs like `dist/` unless explicitly requested.
+- Prefer changes inside:
+  - Slides: `slidev/slides.md`, `slidev/pages/**`
+  - Components: `slidev/components/**`
+  - Snippets: `slidev/snippets/**`
+  - Docs: `docs/**`
+
+## Verification expectations
+
+- After substantive changes, validate locally using the project scripts in `slidev/package.json`:
+  - `npm run dev` (or `pnpm dev`)
+  - `npm run build`
+  - `npm run export` when export behavior is impacted
+- If you change configs/deploy settings, double-check SPA routing expectations (static `dist/`, rewrites to `index.html`).
+
+## Security & privacy
+
+- Never introduce secrets into the repo or paste secrets into chat output.
+- Avoid suggesting unsafe commands (e.g., deleting user data, disabling security) unless explicitly requested and clearly justified.
+

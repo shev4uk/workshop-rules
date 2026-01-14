@@ -1,0 +1,22 @@
+---
+description: "Rules for code snippets and TypeScript used by slides (imported with `<<<`)."
+globs:
+  - "slidev/snippets/**/*.{ts,tsx,js,jsx}"
+  - "slidev/**/*.ts"
+alwaysApply: false
+---
+
+## Snippets (`slidev/snippets/**`)
+
+- Snippets should be **small**, **focused**, and **deterministic** (no flaky external dependencies).
+- Use explicit snippet regions for import into slides:
+  - Region markers like `// #region snippet` ... `// #endregion snippet`
+  - Slides can import via `<<< @/snippets/<file>.ts#snippet`
+- Keep snippet output stable across machines (Windows/macOS).
+
+## TypeScript conventions
+
+- Prefer readable, beginner-friendly TS even for intermediate audiences:
+  - clear names, small functions, avoid clever types unless teaching them
+- If a snippet logs output, keep it concise and meaningful for the slide narrative.
+

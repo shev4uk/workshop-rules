@@ -1,0 +1,45 @@
+---
+description: "Slidev authoring rules for workshop slides (structure, syntax, speaker notes, snippets, diagrams)."
+globs:
+  - "slidev/**/*.md"
+alwaysApply: false
+---
+
+## Where to edit
+
+- Main deck: `slidev/slides.md`
+- Optional split files: `slidev/pages/**/*.md` (use `src:` in `slides.md` frontmatter blocks)
+
+## Slide structure & pacing (workshop-friendly)
+
+- Keep each slide to **one main idea**.
+- For hands-on workshops, add **timeboxes** and **checkpoints** (what “done” looks like).
+- Prefer short bullet lists. Avoid dense paragraphs.
+- When you change timing materially, update `duration:` in the deck frontmatter.
+
+## Speaker notes (required for delivery)
+
+- Use Slidev speaker notes: the **last HTML comment block** of a slide is treated as notes.
+- For demo/lab slides, notes must include:
+  - exact commands to run
+  - expected output/behavior
+  - common failure modes + fixes
+
+## Code blocks & snippets
+
+- Prefer small code blocks and highlight only relevant lines.
+- When referencing existing code, **import snippets** instead of duplicating:
+  - Use `<<< @/snippets/<file>.ts#regionName`
+  - Example in this repo uses: `<<< @/snippets/external.ts#snippet`
+- Keep imported snippets stable and well-scoped (see `slidev/snippets/`).
+
+## Diagrams
+
+- Mermaid is allowed; keep diagrams small and readable.
+- Use consistent node IDs (no spaces). Keep edge labels simple.
+
+## Interactivity
+
+- Vue components can be embedded in markdown. Add custom components under `slidev/components/`.
+- Avoid adding heavy interactivity unless it improves learning outcomes (clarity > novelty).
+

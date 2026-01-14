@@ -1,0 +1,30 @@
+---
+description: "Build/export/deploy expectations for this Slidev deck (Netlify/Vercel static SPA)."
+globs:
+  - "slidev/package.json"
+  - "slidev/netlify.toml"
+  - "slidev/vercel.json"
+alwaysApply: false
+---
+
+## Build outputs
+
+- Slidev builds to a static site in `slidev/dist/` (deployment artifact).
+- Do not hand-edit `dist/`; fix sources instead.
+
+## Commands (run from `slidev/`)
+
+- Install: `npm install` (or `pnpm install` if preferred)
+- Dev: `npm run dev`
+- Build: `npm run build`
+- Export: `npm run export` (PDF/export workflows)
+
+## SPA routing expectations
+
+- Netlify and Vercel are configured to rewrite routes to `index.html` for SPA behavior.
+- If you change routing/paths, ensure rewrites still point all non-asset routes to `index.html`.
+
+## Environment
+
+- Prefer Node 20 for deploy parity (see `slidev/netlify.toml`).
+

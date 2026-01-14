@@ -1,0 +1,24 @@
+---
+description: "Conventions for Vue components used inside Slidev (`slidev/components/**`)."
+globs:
+  - "slidev/components/**/*.vue"
+alwaysApply: false
+---
+
+## Vue version & style
+
+- Assume **Vue 3** (see `slidev/package.json`).
+- Prefer `<script setup lang="ts">` for new/updated components.
+- Keep components **small** and workshop-oriented (clarity > features).
+
+## Component design
+
+- Prefer **pure/presentational** components (props in, UI out). Avoid global side effects.
+- If state is needed, keep it local and documented in comments.
+- Keep props typed (TypeScript) and provide sensible defaults where appropriate.
+
+## Slidev integration
+
+- Components are embedded from markdown slides; ensure they render well at typical slide sizes.
+- Avoid fetching network resources at runtime unless explicitly required for the workshop.
+
